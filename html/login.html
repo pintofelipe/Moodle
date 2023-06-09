@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    Hello Felipe77
-</body>
+  </head>
+  <body>
+    <form action="" id="form" autocomplete="off">
+      <h1>REGISTRO</h1>
+      <div>
+        <label for="">Name: </label>
+        <input type="text" id="name" />
+      </div>
+      <div>
+        <label for="">Email: </label>
+        <input type="text" id="email" />
+      </div>
+      <div>
+        <label for="">Password: </label>
+        <input type="text" id="password" />
+      </div>
+      <button type="submit" id="envier">ENVIAR</button>
+      <p id="espacioinfo"></p>
+    </form>
+
+    <script>
+      const form = document.getElementById("form");
+      const name = document.getElementById("name");
+      const password = document.getElementById("password");
+      const email = document.getElementById("email");
+      const espacioinfo = document.getElementById("espacioinfo");
+
+      form.addEventListener("submit", (evento) => {
+        let emailval = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        let info = "";
+        let verificar = false;
+
+        if (name.value.length < 2) {
+          info += "El nombre debe ser mayor a 2 caracteres <br>";
+          verificar = true;
+        }
+
+        if (!emailval.test(email.value)) {
+          info += "El email es incorrecto<br>"
+          verificar = true;
+        }
+
+        if(password.value.length<8){
+          info+= "La contraseña debe tener 8 o más caracteres <br>"
+          verificar = true;
+        }
+
+        if(verificar){
+          espacioinfo.innerHTML = info;
+          espacioinfo.style.color = "red";
+        }else{
+          espacioinfo.innerText = "Enviado con éxito"
+          espacioinfo.style.color = "green";
+        }
+      });
+    </script>
+  </body>
 </html>
