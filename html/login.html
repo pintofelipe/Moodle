@@ -4,6 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      h1{
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        margin: 0;
+      }
+
+      form input{
+        margin-top: 15px;
+        background-color: pink;
+        
+      }
+    </style>
   </head>
   <body>
     <form action="" id="form" autocomplete="off">
@@ -32,6 +51,7 @@
       const espacioinfo = document.getElementById("espacioinfo");
 
       form.addEventListener("submit", (evento) => {
+        evento.preventDefault();
         let emailval = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         let info = "";
         let verificar = false;
@@ -42,7 +62,7 @@
         }
 
         if (!emailval.test(email.value)) {
-          info += "El email es incorrecto<br>"
+          info += "El email es incorrecto <br>"
           verificar = true;
         }
 
