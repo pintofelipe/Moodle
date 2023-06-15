@@ -6,9 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicicios-resueltos</title>
     <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
         form{
             display: grid;
-            grid-template-columns: 100px 100px;
+            grid-template-columns: 100px;
+            padding-top: 15px;
+            text-align: center;
+            margin-left: 45%;
+        }
+        input{
+            background-color: aqua;
+            width: 120px;
+            height: 40px;
+        }
+        button{
+       
+            font-family: 'Courier New', Courier, monospace;
+            width: auto;
+            margin: 12px;
+            border-radius: 3em;
+        }
+
+        span{
+            font-size: 34px;
+        }
+
+
+        h1{
+            text-align: center;
+            background-color: black;
+            color: #fff;
+            padding: 15px;
+            margin: 0;
         }
     </style>
 </head>
@@ -17,8 +49,8 @@
     <div>
         <form action="" id="form  
         ">
-            <input type="text" placeholder="Ingrese un número" id="">
-            <button id="button">Calcular</button>
+            <input type="text" placeholder="Ingrese un número" id="input">
+            <button id="button" type="button">Calcular</button>
             <span id="info">-</span>
         </form>
 
@@ -28,9 +60,22 @@
             const span = document.getElementById("info");
 
             button.addEventListener("click", e =>{
-                if(isNaN(input.value)){
+                if(isNaN(input.value) || input.value < 1){
                     window.alert("pongase piloso")
+                }else{
+                let n = parseInt(input.value);
+
+                    function Fibonacci(n){
+                        const fib = [0,1];
+                        for(i=2;i<=n; i++){
+                            fib[i] = fib[i-2]+fib[i-1];
+                        }
+                        return fib[n];
+                    }
+                    let fi = Fibonacci(n);
+                span.innerHTML = "El resultado es: "+fi;
                 }
+                
             });
 
         </script>
