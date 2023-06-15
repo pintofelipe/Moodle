@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicicios-resueltos</title>
+    <style>
+        form{
+            display: grid;
+            grid-template-columns: 100px 100px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Fibonacci</h1>
+    <div>
+        <form action="" id="form  
+        ">
+            <input type="text" placeholder="Ingrese un número" id="">
+            <button id="button">Calcular</button>
+            <span id="info">-</span>
+        </form>
+
+        <script>
+            const input = document.getElementById("input");
+            const button = document.querySelector("button");
+            const span = document.getElementById("info");
+
+            button.addEventListener("click", e =>{
+                if(isNaN(input.value)){
+                    window.alert("pongase piloso")
+                }
+            });
+
+        </script>
+    </div>
 </body>
 </html>
