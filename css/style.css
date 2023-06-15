@@ -30,8 +30,14 @@ nav{
 }
 
 .logo{
-    color: #2e63d4;
-    font-size: 45px;
+    margin: 10px 1px 25px 2px;
+    width: 32%;
+    height: 28%;
+    border-radius: 50%;
+    padding: 15px;
+    padding-bottom: 15px;
+    border: #000;
+
 }
 
 ul li{
